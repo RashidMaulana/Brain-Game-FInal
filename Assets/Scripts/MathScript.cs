@@ -10,6 +10,7 @@ public class MathScript : MonoBehaviour
     public InputField input_jawaban;
     public string kesulitan;
 
+    public GameObject feed_benar,feed_salah;
     Text tSisaKuis;
     [SerializeField] Text tKuis;
     //Game Objects
@@ -65,9 +66,18 @@ public class MathScript : MonoBehaviour
         {
             if (paketSoalMudah[indeks].jawaban == input_jawaban.text)
             {
+                feed_benar.SetActive (false);
+                feed_benar.SetActive (true);
+                feed_salah.SetActive (false);
                 skor += skorTiapSoal;
                 PlayerPrefs.SetInt("skor", skor);
             }
+            else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
+                }
+                input_jawaban.text="";
             if (indeks < paketSoalMudah.Length - 1)
             {
                 indeks += 1;
@@ -75,7 +85,7 @@ public class MathScript : MonoBehaviour
 
             else
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("GameEnd");
             }
             EventSystem.current.SetSelectedGameObject(null);
             tampilSoal(paketSoalMudah);
@@ -84,9 +94,18 @@ public class MathScript : MonoBehaviour
         {
             if (paketSoalSedang[indeks].jawaban == input_jawaban.text)
             {
+                feed_benar.SetActive (false);
+                feed_benar.SetActive (true);
+                feed_salah.SetActive (false);
                 skor += skorTiapSoal;
                 PlayerPrefs.SetInt("skor", skor);
             }
+            else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
+                }
+                input_jawaban.text = "";
             if (indeks < paketSoalMudah.Length - 1)
             {
                 indeks += 1;
@@ -94,7 +113,7 @@ public class MathScript : MonoBehaviour
 
             else
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("GameEnd");
             }
 
             EventSystem.current.SetSelectedGameObject(null);
@@ -104,9 +123,18 @@ public class MathScript : MonoBehaviour
         {
             if (paketSoalSulit[indeks].jawaban == input_jawaban.text)
             {
+                feed_benar.SetActive (false);
+                feed_benar.SetActive (true);
+                feed_salah.SetActive (false);
                 skor += skorTiapSoal;
                 PlayerPrefs.SetInt("skor", skor);
             }
+            else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
+                }
+                input_jawaban.text = "";
             if (indeks < paketSoalMudah.Length - 1)
             {
                 indeks += 1;
@@ -114,7 +142,7 @@ public class MathScript : MonoBehaviour
 
             else
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("GameEnd");
             }
             EventSystem.current.SetSelectedGameObject(null);
             tampilSoal(paketSoalSulit);

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class KuisScript : MonoBehaviour
 {
     public string kesulitan;
+    public GameObject feed_benar,feed_salah;
     //Game Objects
     [SerializeField] Text tSisaKuis;
     
@@ -25,6 +26,7 @@ public class KuisScript : MonoBehaviour
     //Attributes
     int indeks = 0;
     [SerializeField] int skorTiapSoal;
+
 
     //Kelas soal
     [System.Serializable] public class soal {
@@ -73,32 +75,64 @@ public class KuisScript : MonoBehaviour
             {
                 if (paketSoalMudah[indeks].teksA == paketSoalMudah[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "B")
             {
                 if (paketSoalMudah[indeks].teksB == paketSoalMudah[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "C")
             {
                 if (paketSoalMudah[indeks].teksC == paketSoalMudah[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "D")
             {
                 if (paketSoalMudah[indeks].teksD == paketSoalMudah[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
 
@@ -120,32 +154,64 @@ public class KuisScript : MonoBehaviour
             {
                 if (paketSoalSedang[indeks].teksA == paketSoalSedang[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "B")
             {
                 if (paketSoalSedang[indeks].teksB == paketSoalSedang[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "C")
             {
                 if (paketSoalSedang[indeks].teksC == paketSoalSedang[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "D")
             {
                 if (paketSoalSedang[indeks].teksD == paketSoalSedang[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
 
@@ -167,32 +233,64 @@ public class KuisScript : MonoBehaviour
             {
                 if (paketSoalSulit[indeks].teksA == paketSoalSulit[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "B")
             {
                 if (paketSoalSulit[indeks].teksB == paketSoalSulit[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "C")
             {
                 if (paketSoalSulit[indeks].teksC == paketSoalSulit[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
             else if (pilihan == "D")
             {
                 if (paketSoalSulit[indeks].teksD == paketSoalSulit[indeks].jawaban)
                 {
+                    feed_benar.SetActive (false);
+                    feed_benar.SetActive (true);
+                    feed_salah.SetActive (false);
                     skor += skorTiapSoal;
                     PlayerPrefs.SetInt("skor", skor);
+                }
+                else{
+                feed_benar.SetActive (false);
+                feed_salah.SetActive (false);
+                feed_salah.SetActive (true);
                 }
             }
 

@@ -20,6 +20,8 @@ public class GameControllerScript : MonoBehaviour
     public int skor = 0;
     [SerializeField] Text tSkor;
 
+    public GameObject feed_benar, feed_salah;
+
     private void Awake()
     {
         puzzles = Resources.LoadAll<Sprite>("Sprites/Sampah");
@@ -111,12 +113,18 @@ public class GameControllerScript : MonoBehaviour
 
             btns[firstGuessIndex].image.color = new Color(0,0,0,0);
             btns[secondGuessIndex].image.color = new Color(0,0,0,0);
+            feed_benar.SetActive (false);
+            feed_benar.SetActive (true);
+            feed_salah.SetActive (false);
             skor += 10;
             PlayerPrefs.SetInt("skor", skor);
             CheckIfTheGameIsFinished();
         }
         else
         {
+            feed_benar.SetActive (false);
+            feed_salah.SetActive (false);
+            feed_salah.SetActive (true);
             yield return new WaitForSeconds(.5f);
             btns[firstGuessIndex].interactable = true;
             btns[firstGuessIndex].image.sprite = bgImage;
